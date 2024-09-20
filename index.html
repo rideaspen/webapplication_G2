@@ -1,0 +1,109 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="res/images/favicon.ico">
+    <title>My Dashboard</title>
+  </head>
+  <body>
+  <header>
+    <strong>Welcome to your dashboard!</strong>
+      <section>
+    <div>
+        <img src="res/images/me.png" width="128" height="128" alt="My picture">
+    </div>
+    <div>
+        <ul>
+            <li>Jaak</li>
+            <li><div id="datetime"></div></li>
+            <li> Computer Engineering </li>
+        </ul>
+    </div>
+    <div>
+        <strong>2.65</strong>
+    </div>
+</section>
+<section>
+    <h1>Courses</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Course Title</th>
+            <th>Semester</th>
+            <th>Grade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td><a href="https://courses.cs.ut.ee/2024/agile">Agile software development</a></td>
+            <td>fall</td>
+            <td>82</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td> Systems modelling </td>
+            <td>fall</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td> Requirements Engineering </td>
+            <td>fall</td>
+            <td>99</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td> Human Computer Interaction </td>
+            <td>fall</td>
+            <td>65</td>
+        </tr>
+        </tbody>
+        <tfoot>
+  <tr>
+    <td colspan="4">End of course list</td>
+  </tr>
+</tfoot>
+    </table>
+    <h2>Add a New Course</h2>
+  <form>
+    <label for="course-title">Course Title:</label>
+    <input type="text" id="course-title" name="course-title"><br><br>
+
+    <label for="semester">Semester:</label>
+    <select id="semester" name="semester">
+      <option value="fall">Fall</option>
+      <option value="spring">Spring</option>
+    </select><br><br>
+
+    <label>Attendance:</label><br>
+    <input type="radio" id="virtual" name="attendance" value="virtual">
+    <label for="virtual">Virtual attendance</label><br>
+    <input type="radio" id="physical" name="attendance" value="physical">
+    <label for="physical">Physical attendance</label><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</section>
+</header>
+    <footer>
+    <ul>
+        <li>
+            <a href="https://ois2.ut.ee/" target="_blank">OIS</a>
+        </li>
+        <li>
+            <a href="https://courses.cs.ut.ee/" target="_blank">Courses</a>
+        </li>
+    </ul>
+</footer>
+    <script>
+  function updateDateTime() {
+    const now = new Date();
+    const dateString = now.toLocaleDateString();
+    const timeString = now.toLocaleTimeString();
+    document.getElementById('datetime').innerHTML = dateString + ' ' + timeString;
+  }
+  setInterval(updateDateTime, 1000);
+  updateDateTime(); // initial call
+</script>
+</body></html>
